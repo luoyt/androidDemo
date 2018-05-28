@@ -1,17 +1,16 @@
 package com.luoyt.demo.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
 import com.blankj.utilcode.util.ToastUtils;
-import com.luoyt.demo.MainActivity;
+import com.elvishew.xlog.LogLevel;
+import com.elvishew.xlog.XLog;
 import com.luoyt.demo.R;
 import com.luoyt.demo.adapter.FruitAdapter;
 import com.luoyt.demo.bean.Fruit;
@@ -22,6 +21,7 @@ import java.util.List;
 public class FirstActivity extends AppCompatActivity {
 
     public static final String TAG = "first";
+
     private Button button_close;
 //    private String[] data = {"Apple", "Banana", "Orange", "Watermelon", "Pear", "Grape", "Mango"};
 
@@ -31,10 +31,12 @@ public class FirstActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
-        Log.d(TAG, "onCreate: create");
+        XLog.init(LogLevel.ALL);
+
+        XLog.d("onCreate: create");
         Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra("data");
-        Log.i(TAG, bundle.toString());
+        XLog.i(bundle.toString());
 
         //关闭页面
         button_close = (Button) findViewById(R.id.button_close);
@@ -93,36 +95,36 @@ public class FirstActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.i(TAG, "onCreate: onstart");
+        XLog.i("onCreate: onstart");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.i(TAG, "onCreate: onstop");
+        XLog.i("onCreate: onstop");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.i(TAG, "onCreate: onrestart");
+        XLog.i("onCreate: onrestart");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.i(TAG, "onCreate: ondestroy");
+        XLog.i("onCreate: ondestroy");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.i(TAG, "onCreate: onpause");
+        XLog.i("onCreate: onpause");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.i(TAG, "onCreate: onresume");
+        XLog.i("onCreate: onresume");
     }
 }

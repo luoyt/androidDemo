@@ -30,5 +30,6 @@ dependencies {
     //https://github.com/Blankj/AndroidUtilCode
     implementation 'com.blankj:utilcode:1.14.2'
 
+    compile 'com.elvishew:xlog:1.4.0'
 
 }
